@@ -1,0 +1,15 @@
+  <!-- Mostramos un mensaje de información avisando al usuario que no hay ninguna fotografía para visualizar -->
+<div *ngIf="mostrarMensaje" class="mensajeNoFotos">
+  Esta cámara no tiene ninguna fotografía para visualizar
+</div>
+<!-- Utilizamos una condición para mostrar esta sección si la longitud del array es mayor que 0 -->
+<div *ngIf="fotos.length > 0" class="foto-container">
+  <!-- Mostramos un encabezamiento para esta sección -->
+  <h3>Fotos:</h3>
+  <!-- Mostramos el listado de las fotografías iterando sobre el array y mostrando cada imagen -->
+  <ul class="foto-lista">
+    <li *ngFor="let foto of fotos" class="foto-item">
+      <img [src]="foto.img_src" alt="Mars Rover Photo" class="foto-img">
+    </li>
+  </ul>
+</div>

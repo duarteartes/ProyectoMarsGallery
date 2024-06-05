@@ -1,0 +1,20 @@
+<!-- Enlazamos la font family "Josefina Slab" que utilizaremos en la aplicación desde Google Fonts -->
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Josefin Slab' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- Encabezado con el título de la aplicación -->
+    <header>
+        <h1>Mars Gallery</h1>
+    </header>
+    <!-- Listado de los rovers obtenidos de la API mostrando su ID y su nombre -->
+    <!-- Utilizamos un bucle para iterar sobre la lista y generar elementos de la lista para cada rover -->
+    <ul *ngFor="let rover of rovers">
+        <li>
+            <a routerLink="/rovers/{{ rover.name.toLowerCase() }}">
+                {{ rover.id }}. {{ rover.name }}
+            </a>
+        </li>
+    </ul>
+</body>

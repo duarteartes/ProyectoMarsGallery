@@ -1,0 +1,31 @@
+<!-- Enlazamos la font family "Josefina Slab" que utilizaremos en la aplicación desde Google Fonts -->
+<head>
+    <link href='https://fonts.googleapis.com/css?family=Josefin Slab' rel='stylesheet'>
+</head>
+
+<body>
+    <!-- Encabezado con el título de la aplicación y título de la sección -->
+    <header>
+        <h1>Mars Gallery</h1>
+        <h2>Acceso de usuarios</h2>
+    </header>
+        <!-- Contenido del formulario de contacto -->
+        <!-- En todos los campos tenemos un enlace bidireccional utilizando ngModel -->
+    <div>
+        <!-- Etiqueta y campo de entrada para el correo electrónico -->
+        <label>Correo Electrónico:</label>
+        <input type="text" [(ngModel)]="email" [ngClass]="{'invalid-field': emailError !== ''}">
+        <!-- Párrafo condicional que muestra un mensaje de error -->
+        <p *ngIf="emailError !== ''" class="error-message">{{ emailError }}</p>
+        <!-- Etiqueta y campo de entrada para el nick del usuario -->
+        <label>Nick de Usuario:</label>
+        <input type="text" [(ngModel)]="username">
+        <!-- Etiqueta y campo de entrada para el nombre completo del usuario -->
+        <label>Nombre Completo:</label>
+        <input type="text" [(ngModel)]="nombreCompleto">
+        <!-- Botón que llama al método "registrarUsuario" -->
+        <button (click)="registrarUsuario()">Registrar</button>
+        <!-- Párrafo condicional que muestra un mensaje de error -->
+        <p *ngIf="generalError !== ''" class="error-message">{{ generalError }}</p>
+    </div>
+</body>

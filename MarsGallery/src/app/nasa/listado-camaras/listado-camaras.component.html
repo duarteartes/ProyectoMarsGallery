@@ -1,0 +1,12 @@
+<div>
+  <!-- Mostramos un encabezamiento para esta sección -->
+  <h3>Cámaras:</h3>
+  <ul>
+    <!-- Mostramos el listado de las cámaras iterando sobre el array -->
+    <li *ngFor="let camera of camaras">
+      <!-- Mostramos el nombre completo de la cámara como un elemento interactivo -->
+      <!-- El evento clic está asociado a la función verFotos que se ejecutará cuando hagamos clic -->
+      <span (click)="onClickVerFotos(camera.name)">{{ camera.full_name }}</span>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
+h3 {
+    text-align: center;
+}
+
+span {
+    cursor: pointer;
+    color: black;
+    text-decoration: underline;
+}

@@ -1,0 +1,23 @@
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Josefin Slab' rel='stylesheet'>
+</head>
+
+<body>
+  <div *ngIf="rover">
+    <h1>Mars Gallery</h1>
+    <h2>{{ rover.name }}</h2>
+    <!-- Detalles del rover -->
+    <p>ID: {{ rover.id }}</p>
+    <p>Lanzamiento: {{ rover.launch_date }}</p>
+    <p>Aterrizaje: {{ rover.landing_date }}</p>
+    <p>Estado: {{ rover.status }}</p>
+    <p>Máx. Sol: {{ rover.max_sol }}</p>
+    <!-- Listado de cámaras -->
+    <app-listado-camaras [camaras]="camaras" (verFotos)="verFotosDeCamara($event)"></app-listado-camaras>
+    <!-- Listado de fotos -->
+    <app-listado-fotos [fotos]="fotos"></app-listado-fotos>
+    <!-- Botón con un evento que llama al método volver para volver a la URL con el listado de los rovers -->
+    <button (click)="volver()">Volver</button>
+  </div>
+</body>
+
